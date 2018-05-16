@@ -15,7 +15,7 @@
 typedef struct Matrix {
 	int num_rows;
 	int num_collumns;
-	int **rows_ptr;
+	int *entry;
 } Matrix;
 
 
