@@ -1,7 +1,3 @@
-/*
- * Operations for matrices
- */
-
 #ifndef __OPERATIONS__H
 #define __OPERATIONS__H
 
@@ -9,8 +5,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-#define MAX_MATRIX_ROWS			10
-#define MAX_MATRIX_COLLUMNS		10
+#define MAX_MATRIX_ROWS				10
+#define MAX_MATRIX_COLLUMNS			10
 
 typedef struct Matrix {
 	int num_rows;
@@ -18,7 +14,11 @@ typedef struct Matrix {
 	int *entry;
 } Matrix;
 
+extern Matrix create_matrix(int row, int col, int *entries);
 
+/*
+ * Operations for matrices
+ */
 extern Matrix add(Matrix a, Matrix b);
 
 extern Matrix dot_product(Matrix a, Matrix b);
