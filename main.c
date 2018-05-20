@@ -21,7 +21,7 @@ void print_matrix(Matrix m) {
 
 int main(int argc, char **argv) {
     if (argc != 10 || argc != 6) {
-        printf("Usage:\n\main <operation> <operands>\n");
+        printf("Usage:\n\tmain <operation> <operands>\n");
         return 0;
     }
 	
@@ -29,6 +29,8 @@ int main(int argc, char **argv) {
 		Matrix a = create_matrix(argv[3], argv[4], parse_string_matrix(argv[5]));
 		Matrix b = create_matrix(argv[7], argv[8], parse_string_matrix(argv[9]));
 		Matrix result = add(a, b);
+		
+		print_matrix(result);
 	} else if (strcmp(argv[1], "dot_product") == 0) {
 
 	} else if (strcmp(argv[1], "transpose") == 0) {
