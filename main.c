@@ -11,10 +11,20 @@ Matrix create_matrix(int row, int col, int *entries) {
 }
 
 void print_matrix(Matrix m) {
-	
+	int rows = m.num_rows;
+	int collumns =  m.num_collumns;
+	char *row_str = (char *)malloc((collumns + 1) * sizeof(char));
+
+	for (int r = 0; r < rows; r++) {
+		for (int c = 0; c < collumns; c++) {
+			row_str[c] = *(m.entry + r*rows + c);
+		}
+		row_str[collumns] = '\0';
+		printf("%s\n", row_str);
+	}
 }
 /*
-* >> ./main <operation> <operands>
+* >> ./main <operation> <operands>1..
 * >> ./main add -m1 2 2 [[0,0],[1,1]] -m2 2 2 [[1,2],[2,1]]
 * >> ./main transpose -m 2 2 [[0,0],[1,1]]
 */
